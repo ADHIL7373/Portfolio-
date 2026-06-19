@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MOHAMED ADHIL | Network Engineer &amp; System Administrator - Premium Cinematic Portfolio">
+    <title>MOHAMED ADHIL | Network Engineer &amp; System Administrator</title>
+    <!-- Google Fonts: Outfit for titles and big numbers, Inter for body copy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- CSS File Link -->
+    <link rel="stylesheet" href="css/style.css?v=4">
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="custom-cursor"></div>
+
+    <!-- Scroll Progress Indicator (Premium Extra) -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- NAVBAR                                     -->
+    <!-- ========================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span>ADHIL</span>
+            </a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <!-- Note: Exactly Home, About, Skills, Certificates, Project, Get in Touch mapped to respective IDs -->
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                <li><a href="#project" class="nav-link">Project</a></li>
+                <li><a href="#contact" class="nav-link">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ========================================== -->
+    <!-- HOME / HERO SECTION (PRESERVED EXACTLY)    -->
+    <!-- ========================================== -->
+    <header id="home" class="hero-section scroll-reveal">
+        <!-- Parallax Background Layer (Slowest) -->
+        <!-- EDIT HERE: Adjust data-speed values to control parallax speed -->
+        <div class="parallax-layer layer-bg" data-speed="0.05"></div>
+
+        <!-- Subtle Cinematic Gold Atmospheric Glow -->
+        <div class="parallax-layer layer-glow" data-speed="0.1"></div>
+
+        <!-- Oversized background word (Sits behind portrait) -->
+        <div class="parallax-layer layer-bg-text" data-speed="0.08">
+            <div class="hero-bg-text">PORTFOLIO</div>
+        </div>
+
+        <!-- Centered Blended Portrait Image (Participates in parallax) -->
+        <!-- EDIT HERE: Change portrait path here -->
+        <div class="parallax-layer layer-portrait" data-speed="0.18">
+            <img src="assets/images/profile.png" alt="Mohamed Adhil portrait" class="hero-portrait-img" width="2048" height="2048" fetchpriority="high">
+        </div>
+
+        <!-- Foreground Overlay text layers -->
+        <div class="hero-container">
+            <!-- Center Name Top area -->
+            <!-- EDIT HERE: Your name for center-top banner -->
+            <div class="hero-name-container">
+                <span class="hero-name-top">MOHAMED ADHIL</span>
+            </div>
+
+        </div>
+
+        <!-- Hero Bottom Fade Transition -->
+        <div class="hero-bottom-fade"></div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span class="mouse">
+                <span class="wheel"></span>
+            </span>
+            <span class="scroll-text">Scroll Down</span>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- ABOUT SECTION (Editorial Parallax Layout)  -->
+    <!-- ========================================== -->
+    <section id="about" class="section about-section scroll-reveal">
+        <!-- Parallax Background Watermark -->
+        <!-- EDIT HERE: Adjust data-scroll-speed to set background parallax speed -->
+        <div class="editorial-bg-watermark parallax-scroll-el" data-scroll-speed="-0.15">ABOUT</div>
+
+        <div class="container">
+            <div class="about-grid">
+                <!-- Left: Sticky Editorial Header Block -->
+                <div class="about-label-column">
+                    <span class="section-index">01 // DISCOVERY</span>
+                    <!-- Title slides slightly slower on scroll -->
+                    <h2 class="section-title-editorial parallax-scroll-el" data-scroll-speed="-0.05">About Me</h2>
+                    <h3 class="about-role-heading parallax-scroll-el" data-scroll-speed="-0.045">Network Engineer <span
+                            class="role-separator">|</span> System Administrator</h3>
+                    <div class="about-quote parallax-scroll-el" data-scroll-speed="0.04">"Simplicity is the ultimate
+                        sophistication."</div>
+                </div>
+
+                <!-- Right: High-end Narrative & Education Grid -->
+                <div class="about-content-column">
+                    <!-- EDIT HERE: About bio headers -->
+                    <h3 class="about-heading">Developing Secure Networks and Intelligent Systems.</h3>
+                    <p class="about-text">
+                        I am a third-year B.Tech Information Technology student with a strong foundation in networking,
+                        system administration, and cybersecurity. My experience includes Cisco networking, TCP/IP,
+                        VLANs, subnetting, routing, switching, and network security. I am passionate about building
+                        secure and efficient network environments while continuously enhancing my technical expertise.
+                    </p>
+                    <p class="about-text">
+                        Beyond academics, I actively explore network infrastructure, security technologies, and
+                        real-world IT solutions through hands-on projects and practical learning. I also have experience
+                        working with Artificial Intelligence and AI-powered agent systems to develop intelligent and
+                        automated solutions. My goal is to combine emerging technologies with strong technical
+                        foundations to solve complex challenges effectively.
+                    </p>
+
+                    <!-- EDIT HERE: Education timeline details -->
+                    <div class="education-block">
+                        <h4 class="editorial-subheading">Education Background</h4>
+
+                        <div class="edu-row">
+                            <div class="edu-left">
+                                <span class="edu-year">2025 &ndash; 2028</span>
+                                <span class="edu-school">Sri Eshwar College of Engineering</span>
+                            </div>
+                            <div class="edu-right">
+                                <h5 class="edu-degree">B.Tech in Information Technology <span
+                                        style="color: var(--accent-gold); font-size: 0.7rem; font-family: var(--font-heading); letter-spacing: 0.15em; font-weight: 600; margin-left: 0.75rem; border: 1px solid rgba(205, 162, 80, 0.4); padding: 0.15rem 0.5rem; border-radius: 3px; vertical-align: middle; display: inline-block; line-height: 1;">CURRENT</span>
+                                </h5>
+                                <p class="edu-desc">Currently pursuing B.Tech in Information Technology (3rd Year), with
+                                    a focus on networking, cybersecurity, artificial intelligence, and modern software
+                                    technologies.</p>
+                            </div>
+                        </div>
+
+                        <div class="edu-row">
+                            <div class="edu-left">
+                                <span class="edu-year">2022 &ndash; 2025</span>
+                                <span class="edu-school">Nachimuthu Polytechnic College</span>
+                            </div>
+                            <div class="edu-right">
+                                <h5 class="edu-degree">Diploma in Communication &amp; Computer Networking <span
+                                        style="color: var(--accent-gold); font-size: 0.7rem; font-family: var(--font-heading); letter-spacing: 0.15em; font-weight: 600; margin-left: 0.75rem; border: 1px solid rgba(205, 162, 80, 0.4); padding: 0.15rem 0.5rem; border-radius: 3px; vertical-align: middle; display: inline-block; line-height: 1;">DIPLOMA</span>
+                                </h5>
+                                <p class="edu-desc">Completed a diploma specializing in communication systems, computer
+                                    networking, routing and switching, network fundamentals, and IT infrastructure
+                                    technologies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Open Dividers Stats row -->
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <div class="stat-number" data-is-text="true">Fresher</div>
+                            <span class="stat-label">Career Stage</span>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-val="4">4+</div>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-val="4">4+</div>
+                            <span class="stat-label">Technical Certifications</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SKILLS SECTION (Floating Space Chips)      -->
+    <!-- ========================================== -->
+    <section id="skills" class="section skills-section scroll-reveal scroll-reveal-skills">
+        <!-- Background enhancement: Watermark and Radial Glow -->
+        <div class="skills-bg-glow"></div>
+        <div class="skills-watermark parallax-scroll-el" data-scroll-speed="-0.1">TECH</div>
+
+        <div class="container">
+            <div class="skills-layout-grid">
+                <!-- Left Title Column -->
+                <div class="skills-sidebar">
+                    <span class="skills-index">02 // EXPERTISE</span>
+                    <h2 class="skills-heading-stagger">
+                        <!-- EDIT HERE: Skills title stagger words -->
+                        <span class="word-stagger">Technical</span>
+                        <span class="word-stagger">Skills</span>
+                    </h2>
+                    <p class="skills-desc-fade">A showcase of my core technical expertise and professional capabilities.</p>
+                </div>
+
+                <!-- Right content: Staggered grid cards with cursor-follow highlights and SVGs -->
+                <div class="skills-grid-staggered">
+                    <!-- SVG Skills Vertical Connector Line -->
+                    <!-- EDIT HERE: stroke-width, opacity, and color can be edited in css/style.css -->
+                    <svg class="skills-connector-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path class="skills-connector-path" d="M 50 0 L 50 100" />
+                    </svg>
+
+                    <!-- Skill Card 1: Problem Solving -->
+                    <!-- EDIT HERE: Skill name, SVG icon path, and parameters -->
+                    <div class="skill-card-premium" data-index="1">
+                        <div class="skill-card-highlight"></div>
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.44 2.5 2.5 0 0 1 0-3.12 3 3 0 0 1 0-4.88 2.5 2.5 0 0 1 0-3.12A2.5 2.5 0 0 1 9.5 2Z" />
+                                    <path
+                                        d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.44 2.5 2.5 0 0 0 0-3.12 3 3 0 0 0 0-4.88 2.5 2.5 0 0 0 0-3.12A2.5 2.5 0 0 0 14.5 2Z" />
+                                </svg>
+                            </div>
+                            <span class="skill-card-title">Problem Solving</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2: Logical Thinking -->
+                    <div class="skill-card-premium" data-index="2">
+                        <div class="skill-card-highlight"></div>
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1.3.5 2.6 1.5 3.5.8.8 1.3 1.5 1.5 2.5" />
+                                    <path d="M9 18h6" />
+                                    <path d="M10 22h4" />
+                                </svg>
+                            </div>
+                            <span class="skill-card-title">Logical Thinking</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3: Git & GitHub -->
+                    <div class="skill-card-premium" data-index="3">
+                        <div class="skill-card-highlight"></div>
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="18" cy="18" r="3" />
+                                    <circle cx="6" cy="6" r="3" />
+                                    <circle cx="6" cy="18" r="3" />
+                                    <path d="M18 15V9a4 4 0 0 0-4-4H9" />
+                                    <line x1="6" y1="9" x2="6" y2="15" />
+                                </svg>
+                            </div>
+                            <span class="skill-card-title">Git &amp; GitHub</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 4: Routing & Switching -->
+                    <div class="skill-card-premium" data-index="4">
+                        <div class="skill-card-highlight"></div>
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="16" y="16" width="6" height="6" rx="1" />
+                                    <rect x="2" y="16" width="6" height="6" rx="1" />
+                                    <rect x="9" y="2" width="6" height="6" rx="1" />
+                                    <path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3" />
+                                    <line x1="12" y1="12" x2="12" y2="8" />
+                                </svg>
+                            </div>
+                            <span class="skill-card-title">Routing &amp; Switching</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 5: TCP/IP -->
+                    <div class="skill-card-premium" data-index="5">
+                        <div class="skill-card-highlight"></div>
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                                    <line x1="6" y1="6" x2="6.01" y2="6" />
+                                    <line x1="6" y1="18" x2="6.01" y2="18" />
+                                </svg>
+                            </div>
+                            <span class="skill-card-title">TCP/IP</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 6: Troubleshooting -->
+                    <div class="skill-card-premium" data-index="6">
+                        <div class="skill-card-highlight"></div>
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
+                            </div>
+                            <span class="skill-card-title">Troubleshooting</span>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 7: Cisco Packet Tracer -->
+                    <div class="skill-card-premium" data-index="7">
+                        <div class="skill-card-highlight"></div>
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                    <line x1="8" y1="21" x2="16" y2="21" />
+                                    <line x1="12" y1="17" x2="12" y2="21" />
+                                </svg>
+                            </div>
+                            <span class="skill-card-title">Cisco Packet Tracer</span>
+                            <!-- EDIT HERE: Floating, hover, and highlight animation factors can be customized in css/style.css -->
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 8: Wireshark -->
+                    <div class="skill-card-premium" data-index="8">
+                        <div class="skill-card-highlight"></div>
+                        <div class="skill-card-inner">
+                            <div class="skill-icon-wrapper">
+                                <svg class="skill-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 20h20C17.5 16 14.5 10.5 12 3c-1.5 5-4.5 11.5-10 17z" />
+                                </svg>
+                            </div>
+                            <span class="skill-card-title">Wireshark</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CERTIFICATES SECTION                       -->
+    <!-- ========================================== -->
+    <section id="certificates" class="section certificates-section scroll-reveal">
+        <!-- Parallax Background Watermark -->
+        <div class="editorial-bg-watermark parallax-scroll-el" data-scroll-speed="-0.16">CREDS</div>
+
+        <div class="container">
+            <div class="certs-layout-grid">
+                <!-- Left Column: Interactive Title List -->
+                <!-- EDIT HERE: Certificates records (Exactly 3 certificates) -->
+                <!-- EDIT HERE: To change organization/year, edit the spans under cert-meta -->
+                <div class="certs-list-column reveal-certs-left">
+                    <span class="section-index">03 // CREDENTIALS</span>
+                    <h2 class="section-title-editorial parallax-scroll-el" data-scroll-speed="-0.05">Certificates</h2>
+                    <p class="sidebar-intro">Showcasing professional certifications that reflect my technical knowledge
+                        and commitment to continuous learning.</p>
+
+                    <div class="cert-interactive-rows">
+                        <!-- SVG Timeline Vertical Connector Line -->
+                        <!-- EDIT HERE: timeline line color, opacity, and width can be edited in css/style.css -->
+                        <svg class="cert-timeline-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                            <path class="cert-timeline-path" d="M 50 0 L 50 100" />
+                        </svg>
+
+                        <!-- Cert Row 1 -->
+                        <!-- EDIT HERE: Edit Certificate Title 1 -->
+                        <div class="cert-interactive-row reveal-cert-row" data-index="1">
+                            <span class="cert-num">01</span>
+                            <div class="cert-meta">
+                                <h3 class="cert-title">Networking Basics</h3>
+                                <span class="cert-issuer">Cisco Networking Academy // 2026</span>
+                            </div>
+                        </div>
+
+                        <!-- Cert Row 2 -->
+                        <!-- EDIT HERE: Edit Certificate Title 2 -->
+                        <div class="cert-interactive-row reveal-cert-row" data-index="2">
+                            <span class="cert-num">02</span>
+                            <div class="cert-meta">
+                                <h3 class="cert-title">Networking Core Pre-Assessment</h3>
+                                <span class="cert-issuer">AWS Training &amp; Certification // 2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Cert Row 3 -->
+                        <!-- EDIT HERE: Edit Certificate Title 3 -->
+                        <div class="cert-interactive-row reveal-cert-row" data-index="3">
+                            <span class="cert-num">03</span>
+                            <div class="cert-meta">
+                                <h3 class="cert-title">Prompt Engineering</h3>
+                                <span class="cert-issuer">SoloLearn // 2025</span>
+                            </div>
+                        </div>
+
+                        <!-- Cert Row 4 -->
+                        <!-- EDIT HERE: Edit Certificate Title 4 -->
+                        <div class="cert-interactive-row reveal-cert-row" data-index="4">
+                            <span class="cert-num">04</span>
+                            <div class="cert-meta">
+                                <h3 class="cert-title">Introduction to SQL</h3>
+                                <span class="cert-issuer">SoloLearn // 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Premium Image Viewfinder -->
+                <!-- EDIT HERE: Certificate image paths (certificate1.png, certificate2.png, certificate3.png) -->
+                <div class="certs-preview-column parallax-scroll-el reveal-certs-right" data-scroll-speed="0.04">
+                    <!-- Soft blurred glow behind card -->
+                    <div class="cert-preview-card-glow"></div>
+
+                    <!-- Preview Card -->
+                    <div class="cert-preview-card">
+                        <div class="cert-previews-container">
+                            <!-- Default Premium Placeholder -->
+                            <div class="cert-placeholder-wrapper active">
+                                <h3 class="cert-placeholder-title">CERTIFICATE PREVIEW</h3>
+                                <p class="cert-placeholder-subtitle">Select a certification to view its official
+                                    credential.</p>
+                            </div>
+
+                            <!-- Preview Image 1 -->
+                            <div class="cert-preview-img-wrapper" data-index="1">
+                                <img src="assets/images/certificate1.jpg?v=1" alt="Networking Basics Certificate" width="1938" height="1313" loading="lazy">
+                                <a href="https://www.netacad.com/" target="_blank" rel="noopener noreferrer"
+                                    class="cert-view-btn">VIEW CREDENTIAL</a>
+                            </div>
+
+                            <!-- Preview Image 2 -->
+                            <div class="cert-preview-img-wrapper" data-index="2">
+                                <img src="assets/images/certificate2.png?v=1"
+                                    alt="Networking Core Pre-Assessment Certificate" width="3300" height="2550" loading="lazy">
+                                <a href="https://aws.amazon.com/training/" target="_blank" rel="noopener noreferrer"
+                                    class="cert-view-btn">VIEW CREDENTIAL</a>
+                            </div>
+
+                            <!-- Preview Image 3 -->
+                            <div class="cert-preview-img-wrapper" data-index="3">
+                                <img src="assets/images/certificate3.png?v=1" alt="Prompt Engineering Certificate" width="1754" height="1238" loading="lazy">
+                                <a href="https://www.sololearn.com/" target="_blank" rel="noopener noreferrer"
+                                    class="cert-view-btn">VIEW CREDENTIAL</a>
+                            </div>
+
+                            <!-- Preview Image 4 -->
+                            <div class="cert-preview-img-wrapper" data-index="4">
+                                <img src="assets/images/certificate4.png?v=1" alt="Introduction to SQL Certificate" width="1280" height="903" loading="lazy">
+                                <a href="https://www.sololearn.com/" target="_blank" rel="noopener noreferrer"
+                                    class="cert-view-btn">VIEW CREDENTIAL</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PROJECT SECTION (Parallax Image Showcase)  -->
+    <!-- ========================================== -->
+    <section id="project" class="section project-section scroll-reveal">
+        <!-- Parallax Background Watermark -->
+        <div class="editorial-bg-watermark parallax-scroll-el" data-scroll-speed="-0.14">WORKS</div>
+
+        <div class="container">
+            <div class="section-header-editorial">
+                <span class="section-index">04 // PROJECTS</span>
+                <h2 class="section-title-editorial-center parallax-scroll-el" data-scroll-speed="-0.04">Featured Work
+                </h2>
+            </div>
+
+            <!-- EDIT HERE: Add, delete or update projects (Exactly 3 projects) -->
+            <div class="editorial-projects-list">
+                <!-- SVG Storytelling Connector Line Overlay -->
+                <!-- EDIT HERE: stroke-width and filters can be tuned in css/style.css -->
+                <svg class="project-connector-svg">
+                    <path class="project-path-glow" />
+                    <path class="project-path-main" />
+                    <circle class="project-path-dot" r="4.5" />
+                </svg>
+
+                <!-- Project 1 (Left Image, Right Content) -->
+                <article class="project-showcase">
+                    <!-- Parallax image wrapper: Image translates inside container on scroll -->
+                    <div class="project-media parallax-media-container">
+                        <img src="assets/images/project1.png?v=1" alt="Raven XDR Platform"
+                            class="project-showcase-img parallax-scroll-el" data-scroll-speed="0.08" width="2610" height="1632" loading="lazy">
+                        <div class="media-overlay-fade"></div>
+                    </div>
+                    <div class="project-details parallax-scroll-el" data-scroll-speed="-0.03">
+                        <span class="project-number-index">01 // CYBERSECURITY</span>
+                        <h3 class="project-showcase-title">Raven XDR: Intelligent Network Monitoring, Security and
+                            Automation Platform</h3>
+                        <p class="project-showcase-desc">
+                            Developed a web-based XDR platform for real-time network monitoring, threat detection,
+                            automated response, and network automation.
+                            <br><br>
+                            Implemented attack detection, DNS intelligence, automated threat mitigation, and centralized
+                            security management to enhance network security and operational efficiency.
+                        </p>
+                        <div class="project-showcase-tags">
+                            <span>Java</span>
+                            <span>Spring Boot</span>
+                            <span>React</span>
+                            <span>PostgreSQL</span>
+                            <span>Python</span>
+                            <span>Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+                                class="project-action-link">
+                                <span>Source Code</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2 (Right Image, Left Content) -->
+                <article class="project-showcase showcase-reversed">
+                    <div class="project-media parallax-media-container">
+                        <img src="assets/images/project2.png?v=1" alt="AI-Based Ransomware Detection System"
+                            class="project-showcase-img parallax-scroll-el" data-scroll-speed="0.08" width="2048" height="2048" loading="lazy">
+                        <div class="media-overlay-fade"></div>
+                    </div>
+                    <div class="project-details parallax-scroll-el" data-scroll-speed="-0.03">
+                        <span class="project-number-index">02 // ARTIFICIAL INTELLIGENCE</span>
+                        <h3 class="project-showcase-title">AI-Based Ransomware Detection System</h3>
+                        <p class="project-showcase-desc">
+                            Developing an AI-powered desktop application that monitors system activities and detects
+                            ransomware by analyzing suspicious file behavior in real time.
+                            <br><br>
+                            Built using C# with intelligent threat detection techniques to strengthen endpoint security
+                            and improve malware prevention.
+                        </p>
+                        <div class="project-showcase-tags">
+                            <span>C#</span>
+                            <span>Artificial Intelligence</span>
+                            <span>Desktop Application</span>
+                            <span>Real-Time Monitoring</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+                                class="project-action-link">
+                                <span>Source Code</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3 (Left Image, Right Content) -->
+                <article class="project-showcase">
+                    <div class="project-media parallax-media-container">
+                        <img src="assets/images/project3.jpeg?v=1" alt="Blockchain-Based Secure Data Sharing Platform"
+                            class="project-showcase-img parallax-scroll-el" data-scroll-speed="0.08" width="1024" height="1024" loading="lazy">
+                        <div class="media-overlay-fade"></div>
+                    </div>
+                    <div class="project-details parallax-scroll-el" data-scroll-speed="-0.03">
+                        <span class="project-number-index">03 // BLOCKCHAIN</span>
+                        <h3 class="project-showcase-title">Blockchain-Based Secure Data Sharing Platform</h3>
+                        <p class="project-showcase-desc">
+                            Designed a blockchain-powered PC-to-PC file sharing platform for secure and reliable data
+                            transmission.
+                            <br><br>
+                            Implemented end-to-end encryption and blockchain-based logging to ensure data integrity,
+                            authenticity, and authorized access.
+                        </p>
+                        <div class="project-showcase-tags">
+                            <span>Blockchain</span>
+                            <span>End-to-End Encryption</span>
+                            <span>Secure File Sharing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ADHIL7373/-Blockchain-Based-Secure-Data-Sharing-Platform" target="_blank" rel="noopener noreferrer"
+                                class="project-action-link">
+                                <span>Source Code</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4 (Right Image, Left Content) -->
+                <article class="project-showcase showcase-reversed">
+                    <div class="project-media parallax-media-container">
+                        <img src="assets/images/project4.jpeg?v=1" alt="Data Security in Cloud Storage Platform"
+                            class="project-showcase-img parallax-scroll-el" data-scroll-speed="0.08" width="1024" height="1024" loading="lazy">
+                        <div class="media-overlay-fade"></div>
+                    </div>
+                    <div class="project-details parallax-scroll-el" data-scroll-speed="-0.03">
+                        <span class="project-number-index">04 // CLOUD SECURITY</span>
+                        <h3 class="project-showcase-title">Data Security with Trusted Third-Party Administration in
+                            Cloud Storage</h3>
+                        <p class="project-showcase-desc">
+                            Developed a secure cloud storage platform to protect sensitive data against unauthorized
+                            access and tampering.
+                            <br><br>
+                            Implemented Blowfish encryption, file splitting, and a Trusted Third Party (TTP)
+                            architecture to enhance confidentiality and secure data management.
+                        </p>
+                        <div class="project-showcase-tags">
+                            <span>Java</span>
+                            <span>Blowfish Encryption</span>
+                            <span>Cloud Storage</span>
+                            <span>Trusted Third Party</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ADHIL7373/Secure_Multi_Cloud_Storage" target="_blank" rel="noopener noreferrer"
+                                class="project-action-link">
+                                <span>Source Code</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- GET IN TOUCH / CONTACT SECTION             -->
+    <!-- ========================================== -->
+    <section id="contact" class="section contact-section scroll-reveal">
+        <div class="container">
+            <div class="contact-editorial-grid">
+                <!-- Left: Text and links -->
+                <div class="contact-info-col">
+                    <span class="section-index">05 // INQUIRE</span>
+                    <h2 class="section-title-editorial parallax-scroll-el" data-scroll-speed="-0.05">Get in Touch</h2>
+                    <p class="contact-intro-text">
+                        I am currently available for selective architectural consulting roles, enterprise advisory
+                        positions, and senior full-time engineering opportunities. Drop me a line!
+                    </p>
+
+                    <!-- EDIT HERE: Contact details -->
+                    <div class="editorial-contact-details">
+                        <div class="contact-row-item">
+                            <span class="contact-row-label">Direct Email</span>
+                            <a href="mailto:a.mohammedasik2006@gmail.com"
+                                class="contact-row-value">a.mohammedasik2006@gmail.com</a>
+                        </div>
+                        <div class="contact-row-item">
+                            <span class="contact-row-label">Base Location</span>
+                            <span class="contact-row-value">Udumalpet</span>
+                        </div>
+                    </div>
+
+                    <!-- EDIT HERE: Social media links -->
+                    <div class="contact-social-block">
+                        <span class="contact-row-label">Connect</span>
+                        <div class="contact-social-row">
+                            <a href="https://www.linkedin.com/in/a-mohamed-adhil/" target="_blank"
+                                rel="noopener noreferrer" class="editorial-social-icon-btn" aria-label="LinkedIn"
+                                data-tooltip="LinkedIn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                    </path>
+                                    <rect width="4" height="12" x="2" y="9"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://github.com/ADHIL7373" target="_blank" rel="noopener noreferrer"
+                                class="editorial-social-icon-btn" aria-label="GitHub" data-tooltip="GitHub">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                                    </path>
+                                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                                </svg>
+                            </a>
+                            <a href="https://x.com/adhil43608" target="_blank" rel="noopener noreferrer"
+                                class="editorial-social-icon-btn" aria-label="Twitter (X)" data-tooltip="Twitter (X)">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="https://www.facebook.com/share/18DyCHxJhN/" target="_blank"
+                                rel="noopener noreferrer" class="editorial-social-icon-btn" aria-label="Facebook"
+                                data-tooltip="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="contact-form-col">
+                    <!-- Soft blurred radial gold glow centered behind form -->
+                    <div class="contact-bg-glow parallax-scroll-el" data-scroll-speed="-0.03"></div>
+                    <div class="contact-form-glass-panel">
+                        <form id="contact-form" class="editorial-contact-form">
+                            <div class="form-group-row">
+                                <input type="text" id="name" name="name" class="form-input-editorial" placeholder=" "
+                                    required autocomplete="name">
+                                <label for="name" class="form-label-editorial">Your Name</label>
+                                <span class="input-line-accent"></span>
+                            </div>
+
+                            <div class="form-group-row">
+                                <input type="email" id="email" name="email" class="form-input-editorial" placeholder=" "
+                                    required autocomplete="email">
+                                <label for="email" class="form-label-editorial">Your Email</label>
+                                <span class="input-line-accent"></span>
+                            </div>
+
+                            <div class="form-group-row">
+                                <input type="text" id="subject" name="subject" class="form-input-editorial"
+                                    placeholder=" " required>
+                                <label for="subject" class="form-label-editorial">Subject</label>
+                                <span class="input-line-accent"></span>
+                            </div>
+
+                            <div class="form-group-row">
+                                <textarea id="message" name="message" class="form-input-editorial text-area-editorial"
+                                    placeholder=" " rows="4" required></textarea>
+                                <label for="message" class="form-label-editorial">Your Message</label>
+                                <span class="input-line-accent"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold btn-submit-editorial">
+                                <span>Submit Message</span>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+                        <div id="form-status" class="form-status-editorial" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <span class="footer-logo-text">MOHAMED ADHIL</span>
+                <p class="footer-copyright-text">&copy; 2026 Mohamed Adhil. All Rights Reserved. Built with premium
+                    minimal style.</p>
+            </div>
+
+            <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to Top">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            </button>
+        </div>
+    </footer>
+
+    <!-- JS File Link -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
