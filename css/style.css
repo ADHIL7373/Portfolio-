@@ -2375,7 +2375,7 @@ button {
     .hero-section {
         height: auto;
         min-height: 100vh;
-        padding: 85px 0 35px 0;
+        padding: 60px 0 35px 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -2391,7 +2391,7 @@ button {
         transform: none !important;
         width: 100%;
         max-width: 82vw;
-        margin: -1.75rem auto 0.5rem auto;
+        margin: -2.75rem auto -0.25rem auto;
         order: 2;
         display: flex;
         justify-content: center;
@@ -2406,17 +2406,17 @@ button {
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        -webkit-mask-image: linear-gradient(to right, transparent, #000000 15px, #000000 calc(100% - 15px), transparent), 
+        -webkit-mask-image: linear-gradient(to right, transparent, rgba(0,0,0,0.1) 6%, rgba(0,0,0,0.7) 18%, #000000 30%, #000000 94%, transparent), 
                             linear-gradient(to bottom, transparent, #000000 15px, #000000 calc(100% - 15px), transparent);
         -webkit-mask-composite: source-in;
-        mask-image: linear-gradient(to right, transparent, #000000 15px, #000000 calc(100% - 15px), transparent), 
+        mask-image: linear-gradient(to right, transparent, rgba(0,0,0,0.1) 6%, rgba(0,0,0,0.7) 18%, #000000 30%, #000000 94%, transparent), 
                     linear-gradient(to bottom, transparent, #000000 15px, #000000 calc(100% - 15px), transparent);
         mask-composite: intersect;
     }
 
     .layer-bg-text {
         position: absolute !important;
-        top: 50% !important;
+        top: 56% !important;
         left: 50% !important;
         transform: translate(-50%, -50%) !important;
         width: 100%;
