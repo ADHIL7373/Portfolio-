@@ -2455,7 +2455,7 @@ button {
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+        filter: none !important;
         opacity: 1 !important;
         -webkit-mask-image: none !important;
         mask-image: none !important;
