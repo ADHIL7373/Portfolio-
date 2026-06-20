@@ -2384,7 +2384,7 @@ button {
         left: auto !important;
         transform: none !important;
         width: 100%;
-        max-width: 75vw;
+        max-width: 80vw;
         margin: -0.5rem auto 1.5rem auto;
         order: 2;
         display: flex;
@@ -2395,7 +2395,7 @@ button {
     .hero-portrait-img {
         width: 72vw;
         height: auto;
-        max-width: 300px;
+        max-width: 330px;
         position: relative;
         left: auto !important;
         transform: none !important;
