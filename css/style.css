@@ -2369,7 +2369,7 @@ button {
     .hero-section {
         height: auto;
         min-height: 100vh;
-        padding: 65px 0 25px 0;
+        padding: 85px 0 35px 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -2400,8 +2400,8 @@ button {
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        mask-image: radial-gradient(ellipse 52% 80% at 50% 40%, #000000 45%, rgba(0, 0, 0, 0.8) 68%, transparent 88%);
-        -webkit-mask-image: radial-gradient(ellipse 52% 80% at 50% 40%, #000000 45%, rgba(0, 0, 0, 0.8) 68%, transparent 88%);
+        mask-image: radial-gradient(ellipse 51% 65% at 50% 35%, #000000 75%, rgba(0, 0, 0, 0.8) 88%, transparent 98%);
+        -webkit-mask-image: radial-gradient(ellipse 51% 65% at 50% 35%, #000000 75%, rgba(0, 0, 0, 0.8) 88%, transparent 98%);
     }
 
     .layer-bg-text {
@@ -2441,7 +2441,7 @@ button {
         padding: 0 1.5rem;
         box-sizing: border-box;
         order: 1;
-        margin-top: -55px !important;
+        margin-top: -30px !important;
     }
 
     .hero-name-container {
