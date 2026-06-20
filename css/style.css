@@ -2213,7 +2213,8 @@ button {
     }
 
     .cert-timeline-svg {
-        display: none !important; /* Disable vertical timeline line */
+        display: none !important;
+        /* Disable vertical timeline line */
     }
 
     .cert-interactive-row {
@@ -2226,19 +2227,23 @@ button {
     }
 
     .cert-interactive-row::before {
-        display: none !important; /* Disable active accent bar indicator */
+        display: none !important;
+        /* Disable active accent bar indicator */
     }
 
     .cert-interactive-row:hover,
     .cert-interactive-row.active {
         background: rgba(205, 162, 80, 0.04) !important;
         border-color: rgba(205, 162, 80, 0.25) !important;
-        padding-left: 1.25rem !important; /* Keep padding consistent to prevent shift */
-        transform: none !important; /* Disable transform shift on mobile */
+        padding-left: 1.25rem !important;
+        /* Keep padding consistent to prevent shift */
+        transform: none !important;
+        /* Disable transform shift on mobile */
     }
 
     .cert-num {
-        margin-right: 1.25rem !important; /* Reduce space to improve readability on narrow screens */
+        margin-right: 1.25rem !important;
+        /* Reduce space to improve readability on narrow screens */
     }
 
     .certs-preview-column {
@@ -2266,7 +2271,8 @@ button {
 
     /* About details mobile role-separator overrides */
     .about-role-heading .role-separator {
-        display: none !important; /* Hide separator on mobile wraps */
+        display: none !important;
+        /* Hide separator on mobile wraps */
     }
 
     /* Projects layout mobile stacking & optimization */
@@ -2400,8 +2406,12 @@ button {
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        mask-image: radial-gradient(ellipse 49% 49% at 50% 50%, #000000 96%, transparent 100%);
-        -webkit-mask-image: radial-gradient(ellipse 49% 49% at 50% 50%, #000000 96%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent, #000000 15px, #000000 calc(100% - 15px), transparent), 
+                            linear-gradient(to bottom, transparent, #000000 15px, #000000 calc(100% - 15px), transparent);
+        -webkit-mask-composite: source-in;
+        mask-image: linear-gradient(to right, transparent, #000000 15px, #000000 calc(100% - 15px), transparent), 
+                    linear-gradient(to bottom, transparent, #000000 15px, #000000 calc(100% - 15px), transparent);
+        mask-composite: intersect;
     }
 
     .layer-bg-text {
@@ -2422,7 +2432,7 @@ button {
         font-size: 15vw !important;
         font-weight: 900;
         letter-spacing: normal !important;
-        color: rgba(255, 255, 255, 0.065) !important;
+        color: rgba(255, 255, 255, 0.06) !important;
         -webkit-text-stroke: none !important;
         margin: 0 !important;
         white-space: nowrap;
