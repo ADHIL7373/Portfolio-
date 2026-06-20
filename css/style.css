@@ -2416,7 +2416,7 @@ button {
 
     .layer-bg-text {
         position: absolute !important;
-        top: 56% !important;
+        top: 37% !important;
         left: 50% !important;
         transform: translate(-50%, -50%) !important;
         width: 100%;
@@ -2429,7 +2429,7 @@ button {
     }
 
     .hero-bg-text {
-        font-size: 15vw !important;
+        font-size: 16vw !important;
         font-weight: 900;
         letter-spacing: normal !important;
         color: rgba(255, 255, 255, 0.06) !important;
