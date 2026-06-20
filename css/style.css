@@ -2406,12 +2406,20 @@ button {
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        -webkit-mask-image: linear-gradient(to right, transparent, #000000 8%, #000000 92%, transparent), 
-                            linear-gradient(to bottom, transparent, #000000 8%, #000000 92%, transparent);
-        -webkit-mask-composite: source-in;
-        mask-image: linear-gradient(to right, transparent, #000000 8%, #000000 92%, transparent), 
-                    linear-gradient(to bottom, transparent, #000000 8%, #000000 92%, transparent);
-        mask-composite: intersect;
+    }
+
+    .layer-portrait::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 76vw;
+        max-width: 350px;
+        z-index: 6;
+        pointer-events: none;
+        box-shadow: inset 0 0 20px 10px #000000;
     }
 
     .layer-bg-text {
