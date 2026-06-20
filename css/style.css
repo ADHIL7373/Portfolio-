@@ -2384,8 +2384,8 @@ button {
         left: auto !important;
         transform: none !important;
         width: 100%;
-        max-width: 80vw;
-        margin: -0.5rem auto 1.5rem auto;
+        max-width: 82vw;
+        margin: -1.75rem auto 0.5rem auto;
         order: 2;
         display: flex;
         justify-content: center;
@@ -2393,15 +2393,15 @@ button {
     }
 
     .hero-portrait-img {
-        width: 72vw;
+        width: 76vw;
         height: auto;
-        max-width: 330px;
+        max-width: 350px;
         position: relative;
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        mask-image: radial-gradient(circle at 50% 45%, #000000 15%, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.15) 50%, transparent 68%);
-        -webkit-mask-image: radial-gradient(circle at 50% 45%, #000000 15%, rgba(0, 0, 0, 0.75) 30%, rgba(0, 0, 0, 0.15) 50%, transparent 68%);
+        mask-image: radial-gradient(ellipse 52% 80% at 50% 40%, #000000 45%, rgba(0, 0, 0, 0.8) 68%, transparent 88%);
+        -webkit-mask-image: radial-gradient(ellipse 52% 80% at 50% 40%, #000000 45%, rgba(0, 0, 0, 0.8) 68%, transparent 88%);
     }
 
     .layer-bg-text {
@@ -2441,7 +2441,7 @@ button {
         padding: 0 1.5rem;
         box-sizing: border-box;
         order: 1;
-        margin-top: -35px !important;
+        margin-top: -55px !important;
     }
 
     .hero-name-container {
