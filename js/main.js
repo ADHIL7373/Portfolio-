@@ -516,6 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll drawing calculation for certificates timeline
     function updateCertsTimeline() {
+        if (window.innerWidth < 1024) return;
         if (!certsTimelinePath || !certsRowsContainer) return;
         const rect = certsRowsContainer.getBoundingClientRect();
         cachedCertsTimeline.absTop = rect.top + (window.scrollY || window.pageYOffset);
@@ -660,6 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 11. PROJECT CONNECTOR LINE (S-shaped Scroll-draw)
     // ==========================================
     function updateProjectConnector() {
+        if (window.innerWidth < 1024) return;
         if (!listContainer || !pathMain || !pathGlow || showcases.length < 2) return;
 
         const scrollY = window.scrollY || window.pageYOffset;
@@ -744,6 +746,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 12. SKILLS VERTICAL CONNECTOR LINE
     // ==========================================
     function updateSkillsConnector() {
+        if (window.innerWidth < 1024) return;
         if (!skillsPath || !skillsGrid) return;
         const rect = skillsGrid.getBoundingClientRect();
         cachedSkillsConnector.absTop = rect.top + (window.scrollY || window.pageYOffset);
