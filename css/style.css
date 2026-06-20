@@ -2400,8 +2400,8 @@ button {
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        mask-image: radial-gradient(ellipse 51% 65% at 50% 35%, #000000 75%, rgba(0, 0, 0, 0.8) 88%, transparent 98%);
-        -webkit-mask-image: radial-gradient(ellipse 51% 65% at 50% 35%, #000000 75%, rgba(0, 0, 0, 0.8) 88%, transparent 98%);
+        mask-image: radial-gradient(ellipse 49% 49% at 50% 50%, #000000 96%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 49% 49% at 50% 50%, #000000 96%, transparent 100%);
     }
 
     .layer-bg-text {
@@ -2422,7 +2422,7 @@ button {
         font-size: 15vw !important;
         font-weight: 900;
         letter-spacing: normal !important;
-        color: rgba(255, 255, 255, 0.05) !important;
+        color: rgba(255, 255, 255, 0.065) !important;
         -webkit-text-stroke: none !important;
         margin: 0 !important;
         white-space: nowrap;
