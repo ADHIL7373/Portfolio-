@@ -2406,17 +2406,17 @@ button {
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        -webkit-mask-image: linear-gradient(to right, transparent, rgba(0,0,0,0.1) 6%, rgba(0,0,0,0.7) 18%, #000000 30%, #000000 94%, transparent), 
-                            linear-gradient(to bottom, transparent, #000000 15px, #000000 calc(100% - 15px), transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, #000000 8%, #000000 92%, transparent), 
+                            linear-gradient(to bottom, transparent, #000000 8%, #000000 92%, transparent);
         -webkit-mask-composite: source-in;
-        mask-image: linear-gradient(to right, transparent, rgba(0,0,0,0.1) 6%, rgba(0,0,0,0.7) 18%, #000000 30%, #000000 94%, transparent), 
-                    linear-gradient(to bottom, transparent, #000000 15px, #000000 calc(100% - 15px), transparent);
+        mask-image: linear-gradient(to right, transparent, #000000 8%, #000000 92%, transparent), 
+                    linear-gradient(to bottom, transparent, #000000 8%, #000000 92%, transparent);
         mask-composite: intersect;
     }
 
     .layer-bg-text {
         position: absolute !important;
-        top: 37% !important;
+        top: 50% !important;
         left: 50% !important;
         transform: translate(-50%, -50%) !important;
         width: 100%;
@@ -2429,7 +2429,7 @@ button {
     }
 
     .hero-bg-text {
-        font-size: 16vw !important;
+        font-size: 15vw !important;
         font-weight: 900;
         letter-spacing: normal !important;
         color: rgba(255, 255, 255, 0.06) !important;
