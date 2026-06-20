@@ -2384,31 +2384,23 @@ button {
         overflow: hidden;
     }
 
-    .layer-portrait {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
+    /* Reset 3D compositing contexts on mobile to allow proper z-index stacking */
+    .parallax-layer {
         transform: none !important;
-        width: 100%;
-        max-width: 82vw;
-        margin: -2.75rem auto -0.25rem auto;
-        order: 2;
-        display: flex;
-        justify-content: center;
-        z-index: 5;
+        transform-style: flat !important;
+        will-change: auto !important;
     }
 
-    .hero-portrait-img {
-        width: 76vw;
-        height: auto;
-        max-width: 350px;
-        position: relative;
-        left: auto !important;
-        transform: none !important;
-        bottom: auto !important;
-        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+    /* 1. Hero background layers */
+    .layer-bg {
+        z-index: 1 !important;
     }
 
+    .layer-glow {
+        z-index: 2 !important;
+    }
+
+    /* 2. PORTFOLIO typography layer */
     .layer-bg-text {
         position: absolute !important;
         top: 50% !important;
@@ -2416,13 +2408,13 @@ button {
         transform: translate(-50%, -50%) !important;
         width: 100%;
         text-align: center;
-        z-index: 1;
+        z-index: 3 !important;
         pointer-events: none;
         display: flex !important;
         justify-content: center;
         align-items: center;
-        -webkit-mask-image: linear-gradient(to right, #000000 30%, transparent 40%, transparent 60%, #000000 70%);
-        mask-image: linear-gradient(to right, #000000 30%, transparent 40%, transparent 60%, #000000 70%);
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
     }
 
     .hero-bg-text {
@@ -2435,9 +2427,49 @@ button {
         white-space: nowrap;
     }
 
+    /* 3. Profile portrait layer */
+    .layer-portrait {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100%;
+        max-width: 82vw;
+        margin: -2.75rem auto -0.25rem auto;
+        order: 2;
+        display: flex;
+        justify-content: center;
+        z-index: 4 !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        border: none !important;
+        outline: none !important;
+    }
+
+    .hero-portrait-img {
+        width: 76vw;
+        height: auto;
+        max-width: 350px;
+        position: relative;
+        left: auto !important;
+        transform: none !important;
+        bottom: auto !important;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+        opacity: 1 !important;
+        -webkit-mask-image: none !important;
+        mask-image: none !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        background-image: none !important;
+        border: none !important;
+        outline: none !important;
+    }
+
+    /* 4. MOHAMED ADHIL heading layer */
     .hero-container {
         position: relative;
-        z-index: 10;
+        z-index: 5 !important;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -2500,6 +2532,7 @@ button {
         align-items: center;
         gap: 6px;
         order: 3;
+        z-index: 6 !important;
     }
 
     .scroll-text {
