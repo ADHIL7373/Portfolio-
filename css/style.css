@@ -2205,11 +2205,40 @@ button {
         font-size: 6rem;
     }
 
-    /* Certificates layout mobile stacking */
+    /* Certificates layout mobile stacking & card conversion */
     .certs-layout-grid {
         display: flex;
         flex-direction: column;
         gap: 3rem;
+    }
+
+    .cert-timeline-svg {
+        display: none !important; /* Disable vertical timeline line */
+    }
+
+    .cert-interactive-row {
+        padding: 1.5rem 1.25rem !important;
+        border-radius: var(--radius-sm);
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        margin-bottom: 0.75rem;
+        transition: background var(--transition-fast), border-color var(--transition-fast) !important;
+    }
+
+    .cert-interactive-row::before {
+        display: none !important; /* Disable active accent bar indicator */
+    }
+
+    .cert-interactive-row:hover,
+    .cert-interactive-row.active {
+        background: rgba(205, 162, 80, 0.04) !important;
+        border-color: rgba(205, 162, 80, 0.25) !important;
+        padding-left: 1.25rem !important; /* Keep padding consistent to prevent shift */
+        transform: none !important; /* Disable transform shift on mobile */
+    }
+
+    .cert-num {
+        margin-right: 1.25rem !important; /* Reduce space to improve readability on narrow screens */
     }
 
     .certs-preview-column {
@@ -2233,6 +2262,11 @@ button {
 
     .cert-preview-img-wrapper img {
         max-height: calc(100% - 60px) !important;
+    }
+
+    /* About details mobile role-separator overrides */
+    .about-role-heading .role-separator {
+        display: none !important; /* Hide separator on mobile wraps */
     }
 
     /* Projects layout mobile stacking & optimization */
