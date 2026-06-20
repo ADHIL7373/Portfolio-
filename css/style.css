@@ -2421,6 +2421,8 @@ button {
         display: flex !important;
         justify-content: center;
         align-items: center;
+        -webkit-mask-image: linear-gradient(to right, #000000 30%, transparent 40%, transparent 60%, #000000 70%);
+        mask-image: linear-gradient(to right, #000000 30%, transparent 40%, transparent 60%, #000000 70%);
     }
 
     .hero-bg-text {
