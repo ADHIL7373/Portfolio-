@@ -2400,8 +2400,8 @@ button {
         left: auto !important;
         transform: none !important;
         bottom: auto !important;
-        mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000000 20%, rgba(0, 0, 0, 0.6) 50%, transparent 85%);
-        -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, #000000 20%, rgba(0, 0, 0, 0.6) 50%, transparent 85%);
+        mask-image: radial-gradient(ellipse 65% 85% at 50% 50%, #000000 20%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.2) 75%, transparent 95%);
+        -webkit-mask-image: radial-gradient(ellipse 65% 85% at 50% 50%, #000000 20%, rgba(0, 0, 0, 0.7) 45%, rgba(0, 0, 0, 0.2) 75%, transparent 95%);
     }
 
     .layer-bg-text {
