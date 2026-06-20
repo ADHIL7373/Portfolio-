@@ -2457,8 +2457,8 @@ button {
         bottom: auto !important;
         filter: none !important;
         opacity: 1 !important;
-        -webkit-mask-image: none !important;
-        mask-image: none !important;
+        -webkit-mask-image: radial-gradient(ellipse at 55% 35%, #000000 78%, transparent 97%) !important;
+        mask-image: radial-gradient(ellipse at 55% 35%, #000000 78%, transparent 97%) !important;
         background: transparent !important;
         background-color: transparent !important;
         background-image: none !important;
