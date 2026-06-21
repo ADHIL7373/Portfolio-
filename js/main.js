@@ -610,10 +610,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const originalBtnText = submitBtnTextSpan.textContent;
 
             // Form validation values
-            const nameVal = document.getElementById('name').value.trim();
-            const emailVal = document.getElementById('email').value.trim();
-            const subjectVal = document.getElementById('subject').value.trim();
-            const messageVal = document.getElementById('message').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -623,22 +623,22 @@ document.addEventListener('DOMContentLoaded', () => {
             formStatus.style.opacity = '1';
 
             // Validate all fields
-            if (!nameVal) {
+            if (!name) {
                 formStatus.classList.add('error');
                 formStatus.textContent = 'Name is required.';
                 return;
             }
-            if (!emailVal || !emailRegex.test(emailVal)) {
+            if (!email || !emailRegex.test(email)) {
                 formStatus.classList.add('error');
                 formStatus.textContent = 'Please enter a valid email address.';
                 return;
             }
-            if (!subjectVal) {
+            if (!subject) {
                 formStatus.classList.add('error');
                 formStatus.textContent = 'Subject is required.';
                 return;
             }
-            if (!messageVal) {
+            if (!message) {
                 formStatus.classList.add('error');
                 formStatus.textContent = 'Message is required.';
                 return;
@@ -659,14 +659,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Send email using EmailJS SDK
-            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                from_name: nameVal,
-                from_email: emailVal,
-                reply_to: emailVal,
-                subject: subjectVal,
-                message: messageVal,
-                to_email: 'a.mohammedasik2006@gmail.com'
-            })
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+            };
+
+            emailjs.send(
+                "YOUR_SERVICE_ID",
+                "YOUR_TEMPLATE_ID",
+                templateParams,
+                "YOUR_PUBLIC_KEY"
+            )
             .then(() => {
                 formStatus.className = 'form-status-editorial success';
                 formStatus.textContent = 'Your message has been sent successfully.';
