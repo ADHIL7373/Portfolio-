@@ -61,9 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let cachedProjectConnector = { absTop: 0, height: 0, pathLength: 0 };
     let cachedSkillsConnector = { absTop: 0, height: 0, pathLength: 0 };
     let cachedCertsTimeline = { absTop: 0, height: 0, pathLength: 0 };
+    let maxScrollHeight = 0;
 
     function cacheLayoutMetrics() {
         const scrollY = window.scrollY || window.pageYOffset;
+        maxScrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
         // Cache non-hero parallax elements
         const parallaxScrollElements = document.querySelectorAll('.parallax-scroll-el');
@@ -119,36 +121,71 @@ document.addEventListener('DOMContentLoaded', () => {
         return (1 - amt) * start + amt * end;
     }
 
+    let isTicking = false;
+
+    function startTicker() {
+        if (!isTicking && !state.prefersReducedMotion) {
+            isTicking = true;
+            requestAnimationFrame(tick);
+        }
+    }
+
     // Scroll event listener (passive for scroll performance)
     window.addEventListener('scroll', () => {
         state.targetScroll = window.scrollY || window.pageYOffset;
         
-        // Update Scroll Progress bar width
-        if (progressBar) {
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (state.targetScroll / height) * 100;
+        // Under reduced motion (where tick is disabled), update progress bar immediately
+        if (state.prefersReducedMotion && progressBar && maxScrollHeight > 0) {
+            const scrolled = (state.targetScroll / maxScrollHeight) * 100;
             progressBar.style.width = scrolled + "%";
         }
+        startTicker();
     }, { passive: true });
 
     // Parallax update ticker
     function tick() {
         // Stop parallax calculations if reduced motion is enabled
-        if (state.prefersReducedMotion) return;
+        if (state.prefersReducedMotion) {
+            isTicking = false;
+            return;
+        }
+
+        let needsMoreTicks = false;
 
         // Perform LERP transition
+        const prevScroll = state.currentScroll;
         state.currentScroll = lerp(state.currentScroll, state.targetScroll, state.ease);
+        
+        if (Math.abs(state.currentScroll - state.targetScroll) > 0.01) {
+            needsMoreTicks = true;
+        } else {
+            state.currentScroll = state.targetScroll;
+        }
+
+        // Update Scroll Progress bar width smoothly in requestAnimationFrame using LERP scroll value
+        if (progressBar && maxScrollHeight > 0) {
+            const scrolled = (state.currentScroll / maxScrollHeight) * 100;
+            progressBar.style.width = scrolled + "%";
+        }
 
         // Smooth contact form mouse-parallax
         if (contactForm && window.innerWidth > state.mobileBreakpoint) {
             contactFormState.currentX = lerp(contactFormState.currentX, contactFormState.targetX, 0.08);
             contactFormState.currentY = lerp(contactFormState.currentY, contactFormState.targetY, 0.08);
             
+            if (Math.abs(contactFormState.currentX - contactFormState.targetX) > 0.01 || 
+                Math.abs(contactFormState.currentY - contactFormState.targetY) > 0.01) {
+                needsMoreTicks = true;
+            } else {
+                contactFormState.currentX = contactFormState.targetX;
+                contactFormState.currentY = contactFormState.targetY;
+            }
+            
             contactForm.style.transform = `translate3d(${contactFormState.currentX}px, ${contactFormState.currentY}px, 0)`;
         }
 
         // Limit updates only when scrolling is active
-        if (Math.abs(state.currentScroll - state.targetScroll) > 0.05) {
+        if (Math.abs(state.currentScroll - prevScroll) > 0.01) {
             
             // A. Update Hero Parallax Layers (Only on Desktop)
             if (viewportWidth > state.mobileBreakpoint) {
@@ -189,13 +226,15 @@ document.addEventListener('DOMContentLoaded', () => {
             animateCertsTimeline();
         }
 
-        requestAnimationFrame(tick);
+        if (needsMoreTicks) {
+            requestAnimationFrame(tick);
+        } else {
+            isTicking = false;
+        }
     }
 
     // Initialize animation ticker
-    if (!state.prefersReducedMotion) {
-        requestAnimationFrame(tick);
-    }
+    startTicker();
 
     // Re-verify reduced motion state changes in real time
     window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (e) => {
@@ -208,8 +247,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.parallax-scroll-el').forEach(el => {
                 el.style.transform = '';
             });
+            isTicking = false;
         } else {
-            requestAnimationFrame(tick);
+            startTicker();
         }
     });
 
@@ -218,19 +258,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     
     // Toggle solid background color on scroll
+    let isNavbarScrolled = null;
     function updateNavbarState() {
         const scrollY = window.scrollY || window.pageYOffset;
-        if (scrollY > 50) {
-            navbar.classList.add('scrolled');
-            if (scrollToTopBtn) {
-                scrollToTopBtn.style.opacity = '1';
-                scrollToTopBtn.style.pointerEvents = 'auto';
-            }
-        } else {
-            navbar.classList.remove('scrolled');
-            if (scrollToTopBtn) {
-                scrollToTopBtn.style.opacity = '0';
-                scrollToTopBtn.style.pointerEvents = 'none';
+        const shouldScroll = scrollY > 50;
+        
+        if (shouldScroll !== isNavbarScrolled) {
+            isNavbarScrolled = shouldScroll;
+            if (shouldScroll) {
+                navbar.classList.add('scrolled');
+                if (scrollToTopBtn) {
+                    scrollToTopBtn.style.opacity = '1';
+                    scrollToTopBtn.style.pointerEvents = 'auto';
+                }
+            } else {
+                navbar.classList.remove('scrolled');
+                if (scrollToTopBtn) {
+                    scrollToTopBtn.style.opacity = '0';
+                    scrollToTopBtn.style.pointerEvents = 'none';
+                }
             }
         }
     }
@@ -912,9 +958,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
 
         function updateCursor() {
-            cursorState.x = lerp(cursorState.x, mouse.x, cursorEase);
-            cursorState.y = lerp(cursorState.y, mouse.y, cursorEase);
-            cursor.style.transform = `translate3d(calc(${cursorState.x}px - 50%), calc(${cursorState.y}px - 50%), 0)`;
+            if (Math.abs(cursorState.x - mouse.x) > 0.05 || Math.abs(cursorState.y - mouse.y) > 0.05) {
+                cursorState.x = lerp(cursorState.x, mouse.x, cursorEase);
+                cursorState.y = lerp(cursorState.y, mouse.y, cursorEase);
+                cursor.style.transform = `translate3d(calc(${cursorState.x}px - 50%), calc(${cursorState.y}px - 50%), 0)`;
+            }
             requestAnimationFrame(updateCursor);
         }
         requestAnimationFrame(updateCursor);
