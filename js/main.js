@@ -579,27 +579,118 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 9. CONTACT FORM SUBMISSION HANDLER
+    // 9. CONTACT FORM SUBMISSION HANDLER (EMAILJS INTEGRATION)
     // ==========================================
+    
+    // -------------------------------------------------------------
+    // PLACE YOUR EMAILJS CREDENTIALS HERE:
+    // 1. Log in to your EmailJS account (https://dashboard.emailjs.com/)
+    // 2. Go to 'Account' (or 'API Keys') to get your Public Key.
+    // 3. Go to 'Email Services' to create a service and get your Service ID.
+    // 4. Go to 'Email Templates' to create a template and get your Template ID.
+    // 5. In your template settings, ensure the recipient email matches: a.mohammedasik2006@gmail.com
+    // -------------------------------------------------------------
+    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your EmailJS Public Key
+    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace with your EmailJS Service ID
+    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS Template ID
+
+    // Initialize EmailJS with Public Key
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init({
+            publicKey: EMAILJS_PUBLIC_KEY,
+        });
+    }
+
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Display loading feedback
+
+            const submitBtn = contactForm.querySelector('.btn-submit-editorial');
+            const submitBtnTextSpan = submitBtn.querySelector('span');
+            const originalBtnText = submitBtnTextSpan.textContent;
+
+            // Form validation values
+            const nameVal = document.getElementById('name').value.trim();
+            const emailVal = document.getElementById('email').value.trim();
+            const subjectVal = document.getElementById('subject').value.trim();
+            const messageVal = document.getElementById('message').value.trim();
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Reset status block
             formStatus.className = 'form-status-editorial';
+            formStatus.textContent = '';
+            formStatus.style.opacity = '1';
+
+            // Validate all fields
+            if (!nameVal) {
+                formStatus.classList.add('error');
+                formStatus.textContent = 'Name is required.';
+                return;
+            }
+            if (!emailVal || !emailRegex.test(emailVal)) {
+                formStatus.classList.add('error');
+                formStatus.textContent = 'Please enter a valid email address.';
+                return;
+            }
+            if (!subjectVal) {
+                formStatus.classList.add('error');
+                formStatus.textContent = 'Subject is required.';
+                return;
+            }
+            if (!messageVal) {
+                formStatus.classList.add('error');
+                formStatus.textContent = 'Message is required.';
+                return;
+            }
+
+            // Disable submit button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            submitBtnTextSpan.textContent = 'Sending...';
             formStatus.textContent = 'Transmitting message...';
 
-            // Gather values
-            const nameVal = document.getElementById('name').value;
+            if (typeof emailjs === 'undefined') {
+                console.error('EmailJS SDK failed to load.');
+                formStatus.className = 'form-status-editorial error';
+                formStatus.textContent = 'Failed to send message. Please try again.';
+                resetButton();
+                return;
+            }
 
-            // Mocking API call latency (1.2 seconds)
-            setTimeout(() => {
-                formStatus.classList.add('success');
-                formStatus.textContent = `Transmission successful! Thank you, ${nameVal}. I'll reach out shortly.`;
+            // Send email using EmailJS SDK
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                from_name: nameVal,
+                from_email: emailVal,
+                reply_to: emailVal,
+                subject: subjectVal,
+                message: messageVal,
+                to_email: 'a.mohammedasik2006@gmail.com'
+            })
+            .then(() => {
+                formStatus.className = 'form-status-editorial success';
+                formStatus.textContent = 'Your message has been sent successfully.';
                 contactForm.reset();
-                
-                // Fade message status out after 6 seconds
+                resetButton();
+                autoFadeStatus();
+            })
+            .catch((error) => {
+                console.error('EmailJS Send Error:', error);
+                formStatus.className = 'form-status-editorial error';
+                formStatus.textContent = 'Failed to send message. Please try again.';
+                resetButton();
+                autoFadeStatus();
+            });
+
+            function resetButton() {
+                submitBtn.disabled = false;
+                submitBtn.style.opacity = '1';
+                submitBtnTextSpan.textContent = originalBtnText;
+            }
+
+            function autoFadeStatus() {
                 setTimeout(() => {
+                    formStatus.style.transition = 'opacity 500ms ease';
                     formStatus.style.opacity = '0';
                     setTimeout(() => {
                         formStatus.textContent = '';
@@ -607,7 +698,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         formStatus.className = 'form-status-editorial';
                     }, 500);
                 }, 6000);
-            }, 1200);
+            }
         });
     }
 
