@@ -590,9 +590,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Go to 'Email Templates' to create a template and get your Template ID.
     // 5. In your template settings, ensure the recipient email matches: a.mohammedasik2006@gmail.com
     // -------------------------------------------------------------
-    const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your EmailJS Public Key
-    const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace with your EmailJS Service ID
-    const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace with your EmailJS Template ID
+    const EMAILJS_PUBLIC_KEY = "QeO5TAhPEjjI1hs64"; // Replace with your EmailJS Public Key
+    const EMAILJS_SERVICE_ID = "service_4fiuovc"; // Replace with your EmailJS Service ID
+    const EMAILJS_TEMPLATE_ID = "template_nh1xrhs"; // Replace with your EmailJS Template ID
 
     // Initialize EmailJS with Public Key
     if (typeof emailjs !== 'undefined') {
@@ -602,7 +602,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const submitBtn = contactForm.querySelector('.btn-submit-editorial');
@@ -666,26 +666,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: message,
             };
 
-            emailjs.send(
-                "YOUR_SERVICE_ID",
-                "YOUR_TEMPLATE_ID",
-                templateParams,
-                "YOUR_PUBLIC_KEY"
-            )
-            .then(() => {
+            try {
+                await emailjs.send(
+                    "service_4fiuovc",
+                    "template_nh1xrhs",
+                    templateParams,
+                    "QeO5TAhPEjjI1hs64"
+                );
                 formStatus.className = 'form-status-editorial success';
                 formStatus.textContent = 'Your message has been sent successfully.';
                 contactForm.reset();
                 resetButton();
                 autoFadeStatus();
-            })
-            .catch((error) => {
+            } catch (error) {
                 console.error('EmailJS Send Error:', error);
                 formStatus.className = 'form-status-editorial error';
                 formStatus.textContent = 'Failed to send message. Please try again.';
                 resetButton();
                 autoFadeStatus();
-            });
+            }
 
             function resetButton() {
                 submitBtn.disabled = false;
