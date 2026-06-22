@@ -437,6 +437,70 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
+    // 7b. EDUCATION PERFORMANCE COUNT-UP ANIMATION
+    // ==========================================
+    let eduPerformanceAnimated = false;
+    
+    // Initialize to 0 dynamically to prevent flash of final values
+    document.querySelectorAll('.animate-num').forEach(elem => {
+        const targetStr = elem.getAttribute('data-target');
+        const decimalPlaces = targetStr.includes('.') ? targetStr.split('.')[1].length : 0;
+        elem.textContent = (0).toFixed(decimalPlaces);
+    });
+
+    function animateEducationPerformance() {
+        if (eduPerformanceAnimated) return;
+        eduPerformanceAnimated = true;
+
+        const animElems = document.querySelectorAll('.animate-num');
+        animElems.forEach(elem => {
+            const targetVal = parseFloat(elem.getAttribute('data-target')) || 0;
+            const targetStr = elem.getAttribute('data-target');
+            const decimalPlaces = targetStr.includes('.') ? targetStr.split('.')[1].length : 0;
+            const duration = 2600; // 2.6 seconds (smooth ease-out)
+            const startTime = performance.now();
+
+            function updateNumber(now) {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Smooth ease-out cubic
+                const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+                const currentVal = easeOutProgress * targetVal;
+
+                elem.textContent = currentVal.toFixed(decimalPlaces);
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                } else {
+                    elem.textContent = targetVal.toFixed(decimalPlaces);
+                }
+            }
+
+            requestAnimationFrame(updateNumber);
+        });
+    }
+
+    const eduBlock = document.querySelector('.education-block');
+    if (eduBlock) {
+        const rect = eduBlock.getBoundingClientRect();
+        // If the block is taller than the viewport, scale the threshold accordingly
+        const threshold = rect.height > window.innerHeight 
+            ? Math.min(0.55, (window.innerHeight * 0.5) / rect.height)
+            : 0.55;
+
+        const eduObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateEducationPerformance();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: threshold });
+        eduObserver.observe(eduBlock);
+    }
+
+    // ==========================================
     // 8. CERTIFICATES INTERACTIVE VIEWPORT SHOWCASE
     // ==========================================
     

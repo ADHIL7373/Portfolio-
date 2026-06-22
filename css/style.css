@@ -757,6 +757,19 @@ button {
     color: var(--text-secondary);
 }
 
+.edu-performance {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 0.75rem;
+}
+
+.edu-performance .performance-value {
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
 /* Stats list (Open dividers) */
 .stats-row {
     display: grid;
