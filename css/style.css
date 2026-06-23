@@ -311,8 +311,8 @@ button {
 }
 
 .nav-logo-img {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     object-fit: contain;
     display: block;
     border-radius: 50%;
@@ -2361,8 +2361,8 @@ button {
     }
 
     .nav-logo-img {
-        width: 24px;
-        height: 24px;
+        width: 29px;
+        height: 29px;
     }
 
     .nav-container {
